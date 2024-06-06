@@ -1,7 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { products } from '../data/Data'
 
 export default function Product() {
+    const [menuItems, setMenuItems] = useState(products);
+    const filterItems = (category) => {
+        
+        const newItems = products.filter((item) => item.category === category);
+        setMenuItems(newItems);
+
+        if (category === "all") {
+            setMenuItems(products);
+            return;
+        }
+    }
   return (
     <>
     <div className='container-fluid fruite py-5'>
@@ -14,19 +25,22 @@ export default function Product() {
                     <div className='col-lg-8 text-end'>
                         <ul className='nav nav-pills d-inline-flex text-center mb-5'>
                             <li className='nav-item'>
-                                <a href="" className='d-flex m-2 py-2 bg-light rounded-pill'><span className='text-dark' style={{width: "130px"}}>All Products</span></a>
+                                <a href="" className='d-flex m-2 py-2 bg-light rounded-pill' onClick={() => filterItems("all")}><span className='text-dark' style={{width: "130px"}}>All Products</span></a>
                             </li>
                             <li className='nav-item'>
-                                <a href="" className='d-flex m-2 py-2 bg-light rounded-pill'><span className='text-dark' style={{width: "130px"}}>Bread</span></a>
+                                <a onClick={() => filterItems("Fruits")} className='d-flex m-2 py-2 bg-light rounded-pill'><span className='text-dark' style={{width: "130px"}}>Fruits</span></a>
                             </li>
                             <li className='nav-item'>
-                                <a href="" className='d-flex m-2 py-2 bg-light rounded-pill'><span className='text-dark' style={{width: "130px"}}>Fruits</span></a>
+                                <a onClick={() => filterItems("Seafood")} className='d-flex m-2 py-2 bg-light rounded-pill'><span className='text-dark' style={{width: "130px"}}>Seafood</span></a>
                             </li>
                             <li className='nav-item'>
-                                <a href="" className='d-flex m-2 py-2 bg-light rounded-pill'><span className='text-dark' style={{width: "130px"}}>Vegetables</span></a>
+                                <a onClick={() => filterItems("Diary")} className='d-flex m-2 py-2 bg-light rounded-pill'><span className='text-dark' style={{width: "130px"}}>Diary</span></a>
                             </li>
                             <li className='nav-item'>
-                                <a href="" className='d-flex m-2 py-2 bg-light rounded-pill'><span className='text-dark' style={{width: "130px"}}>Meat</span></a>
+                                <a onClick={() => filterItems("Bakery")} className='d-flex m-2 py-2 bg-light rounded-pill'><span className='text-dark' style={{width: "130px"}}>Bakery</span></a>
+                            </li>
+                            <li className='nav-item'>
+                                <a onClick={() => filterItems("Ukrainian")} className='d-flex m-2 py-2 bg-light rounded-pill'><span className='text-dark' style={{width: "130px"}}>Ukrainian</span></a>
                             </li>
                         </ul>
                     </div>
@@ -35,13 +49,12 @@ export default function Product() {
             <div className='tab-pane fade show p-0 active'>
                 <div className='row g-4'>
                     <div className='col-lg-12'>
-                        <div className='row g-4'>
-                            {
-                                products.map((val, index) => (
-                                    <div className='col-md-6 col-lg-4 col-xl-3' key={index}>
+                        <div className='row g-4 '>
+                            { menuItems.map((val, index) => (
+                                    <div style={{height: "auto"}} className='col-md-6 col-lg-4 col-xl-3' key={index}>
                                         <div className='rounded position-relative fruite-item'>
                                         <div className='fruite-img'>
-                                            <img src={val.product_img} alt="img" className='img-fluid w-100 rounded-top'/>
+                                            <img src={val.product_img} alt="img" className='img-fluid w-100 rounded-top' style={{height: "240px"}}/>
                                         </div>
                                         <div 
                                             className='text-white bg-secondary px-3 py-1 rounded position-absolute' 

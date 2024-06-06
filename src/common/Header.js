@@ -22,10 +22,10 @@ export default function Header() {
                         <div className='nav-item dropdown'>
                             <Link to="" className='nav-link dropdown-toggle' data-bs-toggle="dropdown">Category</Link>
                             <div className='dropdown-menu m-0 bg-secondary rounded-0'>
-                                <Link className='dropdown-item'>Vegetables</Link>
-                                <Link className='dropdown-item'>Fruites</Link>
-                                <Link className='dropdown-item'>Bread</Link>
-                                <Link className='dropdown-item'>Meat</Link>
+                                <Link className='dropdown-item'>Fruits</Link>
+                                <Link className='dropdown-item'>Seafood</Link>
+                                <Link className='dropdown-item'>Diary</Link>
+                                <Link className='dropdown-item'>Ukrainian </Link>
                             </div>
                         </div>
                         

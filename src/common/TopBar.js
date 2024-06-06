@@ -5,7 +5,7 @@ import Header from './Header'
 export default function TopBar() {
   return (
     <>
-        <div className='container topbar bg-primary d-none d-lg-block custom-font'>
+        <div className='container topbar bg-success d-none d-lg-block custom-font'>
             <div className='d-flex justify-content-between'>
                 <div className='top-info ps-2 fs-5'>
                     <small className = "me-3">

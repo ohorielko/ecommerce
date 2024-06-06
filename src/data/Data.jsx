@@ -30,9 +30,9 @@ export const socialIcon = [
   
     {
       id: 2,
-      category: "Vegetables",
-      product_name: "Cauliflower",
-      product_img: "../assets/img/best-product-6.jpg",
+      category: "Fruits",
+      product_name: "Banana",
+      product_img: "../assets/img/best-product-2.jpg",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt",
       price: "2.99",
@@ -41,8 +41,8 @@ export const socialIcon = [
     {
       id: 3,
       category: "Fruits",
-      product_name: "Pomegranate",
-      product_img: "../assets/img/best-product-5.jpg",
+      product_name: "Mangosteen",
+      product_img: "../assets/img/best-product-3.jpg",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt",
       price: "8.99",
@@ -50,8 +50,8 @@ export const socialIcon = [
   
     {
       id: 4,
-      category: "Fruits",
-      product_name: "Apple",
+      category: "Seafood",
+      product_name: "Salmon",
       product_img: "../assets/img/best-product-4.jpg",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt",
@@ -59,9 +59,9 @@ export const socialIcon = [
     },
     {
       id: 5,
-      category: "Bread",
-      product_name: "Pouroti",
-      product_img: "../assets/img/best-product-3.jpg",
+      category: "Seafood",
+      product_name: "Shrimp",
+      product_img: "../assets/img/best-product-5.jpg",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt",
       price: "3.99",
@@ -69,27 +69,72 @@ export const socialIcon = [
   
     {
       id: 6,
-      category: "Meat",
-      product_name: "Chicken",
-      product_img: "../assets/img/best-product-2.jpg",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt",
-      price: "3.99",
-    },
-    {
-      id: 7,
-      category: "Vegetables",
-      product_name: "Apple",
+      category: "Seafood",
+      product_name: "Snapper",
       product_img: "../assets/img/best-product-6.jpg",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt",
       price: "3.99",
     },
     {
+      id: 7,
+      category: "Diary",
+      product_name: "Raw Milk Yogurt",
+      product_img: "../assets/img/best-product-7.jpg",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt",
+      price: "3.99",
+    },
+    {
       id: 8,
-      category: "Vegetables",
-      product_name: "Tomatos",
-      product_img: "../assets/img/best-product-4.jpg",
+      category: "Diary",
+      product_name: "Milk",
+      product_img: "../assets/img/best-product-8.jpg",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt",
+      price: "3.99",
+    },
+    {
+      id: 9,
+      category: "Bakery",
+      product_name: "Grlic Bread",
+      product_img: "../assets/img/garlic-bread.jpg",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt",
+      price: "3.99",
+    },
+    {
+      id: 10,
+      category: "Bakery",
+      product_name: "Pastry",
+      product_img: "../assets/img/pastry.jpg",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt",
+      price: "3.99",
+    },
+    {
+      id: 11,
+      category: "Ukrainian",
+      product_name: "Potato Varenyky",
+      product_img: "../assets/img/varenyky.jpg",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt",
+      price: "3.99",
+    },
+    {
+      id: 12,
+      category: "Ukrainian",
+      product_name: "Borscht",
+      product_img: "../assets/img/borsh.jpg",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt",
+      price: "3.99",
+    },
+    {
+      id: 13,
+      category: "Ukrainian",
+      product_name: "Sweet Blintzes",
+      product_img: "../assets/img/nalysnyky.jpg",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt",
       price: "3.99",
