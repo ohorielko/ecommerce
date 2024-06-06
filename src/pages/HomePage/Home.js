@@ -1,9 +1,12 @@
 import React from 'react'
+import HomeSlider from '../../components/HomeSlider';
+import Features from '../../components/Features';
 
 export default function Home() {
   return (
     <>
-        <h1>My Home</h1>
+      <HomeSlider />
+      <Features />
     </>
   )
 }
