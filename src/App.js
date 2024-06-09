@@ -4,6 +4,7 @@ import "./css/bootstrap.min.css";
 import Header from "./common/Header";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import {Home, Shop, Cart} from "./pages";
+import Footer from "./common/Footer";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/shop" element={<Shop />}/>
           <Route path="/cart" element={<Cart />}/>
         </Routes>
+        <Footer/>
       </Router>
       
     </div>

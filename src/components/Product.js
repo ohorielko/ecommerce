@@ -1,18 +1,54 @@
 import React, { useState } from 'react'
 import { products } from '../data/Data'
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { addToCart } from '../redux/CartSlice';
 
 export default function Product() {
-    const [menuItems, setMenuItems] = useState(products);
-    const filterItems = (category) => {
-        
-        const newItems = products.filter((item) => item.category === category);
-        setMenuItems(newItems);
+    const dispatch = useDispatch();
+  const [qty, setQty] = useState(1);
+  const navigate = useNavigate();
 
-        if (category === "all") {
-            setMenuItems(products);
-            return;
-        }
+  const increaseQty = () => {
+    setQty((preQty) => {
+      let newQty = preQty + 1;
+      return newQty;
+    });
+  };
+
+  const decreaseQty = () => {
+    setQty((preQty) => {
+      let newQty = preQty - 1;
+      if (newQty < 1) {
+        newQty = 1;
+      }
+      return newQty;
+    });
+  };
+
+  const handleAddToCart = (product) => {
+    let totalPrice = qty * product.price;
+    const tempProduct = {
+      ...product,
+      qunatity: qty,
+      totalPrice,
+    };
+    dispatch(addToCart(tempProduct));
+    navigate("/cart");
+  };
+
+  const [menuItems, setMenuItem] = useState(products);
+
+  const filterItems = (category) => {
+    const newItems = products.filter((item) => item.category === category);
+    setMenuItem(newItems);
+
+    // for all data show
+    if (category === "all") {
+      setMenuItem(products);
+      return;
     }
+  };
   return (
     <>
     <div className='container-fluid fruite py-5'>
@@ -68,7 +104,7 @@ export default function Product() {
                                             <p>{val.description}</p>
                                             <div className='d-flex justify-content-between flex-lg-wrap'>
                                                 <p className='text-dark fs-5 fw-bold mb-0'>$ {val.price}</p>
-                                                <button
+                                                <button onClick={() => handleAddToCart(val)}
                                                     type='btn'
                                                     className='btn border border-secondary rounded-pill px-3 text-primary'
                                                 >

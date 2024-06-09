@@ -1,8 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import TopBar from './TopBar'
+import { useDispatch, useSelector } from 'react-redux'
+import { getCartTotal } from '../redux/CartSlice';
 
 export default function Header() {
+    const dispatch = useDispatch();
+    const{totalItems} = useSelector((state) => state.cart);
+    useEffect(() => {
+        dispatch(getCartTotal());
+    }, [])
   return (
     <div className='container-fluid fixed-top'>
         <TopBar/>
@@ -37,7 +44,7 @@ export default function Header() {
                         </button>
                         <Link to="cart" className='position-relative me-4 my-auto'>
                             <i className='fa fa-shopping-bag fa-2x'></i>
-                            <span className='position-absolute bg-secondary rounded circle d-flex align-items-center justify-content-center text-dark px-1' style={{top: "-5px", left: "15px", height: "20px", minWidth:"20px"}}>0</span>
+                            <span className='position-absolute bg-secondary rounded circle d-flex align-items-center justify-content-center text-dark px-1' style={{top: "-5px", left: "15px", height: "20px", minWidth:"20px"}}>{totalItems}</span>
                         </Link>
                     </div>
                 </div>
